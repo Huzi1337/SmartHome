@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shelf" clip-path="url(#clip0_1866_7839)">
+<path id="Vector" d="M0.449219 6.30708H6.1406V0.361328H1.33098L0.449219 6.30708ZM5.75583 6.17688H0.753827L1.5875 0.650659H5.75583V6.17688Z" fill="black" stroke="black" stroke-width="0.5" stroke-miterlimit="10"/>
+<path id="Vector_2" d="M11.7834 14.6836H13.082L13.082 1.21524H11.7834L11.7834 14.6836Z" fill="black"/>
+<path id="Vector_3" d="M6.02734 1.21493V2.38672L13.0815 2.38672V1.21493L6.02734 1.21493Z" fill="black"/>
+<path id="Vector_4" d="M15.4701 14.9727H9.32984C9.03765 14.9727 8.80078 15.1864 8.80078 15.4501V15.5224C8.80078 15.786 9.03765 15.9998 9.32984 15.9998H15.4701C15.7623 15.9998 15.9992 15.786 15.9992 15.5224V15.4501C15.9992 15.1864 15.7623 14.9727 15.4701 14.9727Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_1866_7839">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

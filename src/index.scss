@@ -1,0 +1,14 @@
+@use "./assets/colors";
+@use "./assets/mixins";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  @include mixins.align-content();
+  background-color: colors.$gray;
+
+  min-height: 100vh;
+}

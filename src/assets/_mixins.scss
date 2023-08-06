@@ -1,0 +1,49 @@
+@use "./colors";
+
+@mixin main-Gradient {
+  background: linear-gradient(
+    180deg,
+    colors.$lightIndigo 0%,
+    colors.$pinkishPurple 100%
+  );
+}
+
+@mixin default-dropShadow {
+  box-shadow: 0px 2px 8px 0px rgba(12, 12, 12, 0.1);
+}
+
+@mixin align-content(
+  $direction: row,
+  $main: flex-start,
+  $cross: flex-start,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $main;
+  align-items: $cross;
+  flex-wrap: $wrap;
+}
+
+@mixin center-row {
+  @include align-content(row, center, center);
+}
+
+@mixin center-column {
+  @include align-content(column, center, center);
+}
+
+@mixin set-font($size, $weight: 500, $color: colors.$text) {
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: normal;
+  font-family: "Inter";
+  color: $color;
+}
+
+@mixin adjust-background($size: cover, $repeat: no-repeat, $position: center) {
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
