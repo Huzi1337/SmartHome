@@ -1,0 +1,31 @@
+@use "../assets/mixins";
+
+$iconSize: 32px;
+
+.pageHeader__container {
+  @include mixins.align-content($main: flex-end);
+  gap: 20px;
+  width: 100%;
+  height: fit-content;
+  padding: 0 30px;
+  grid-area: options;
+}
+
+.pageHeader__button {
+  @include mixins.adjust-background();
+  border: 0;
+  width: $iconSize;
+  height: $iconSize;
+}
+
+.search {
+  background-image: url(/icons/headerOptions/search.svg);
+}
+
+.settings {
+  background-image: url(/icons/headerOptions/settings.svg);
+}
+
+.notifications {
+  background-image: url(/icons/headerOptions/notifications.svg);
+}

@@ -1,0 +1,21 @@
+@use "../assets/colors";
+$iconSize: 25px;
+
+.roundIcon__container {
+  background-color: colors.$lavender;
+  border-radius: 45px;
+  padding: 0 4px;
+  width: $iconSize;
+  height: $iconSize;
+  border: 0;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.device__options {
+  .roundIcon__container:last-child {
+    margin-bottom: auto;
+  }
+}

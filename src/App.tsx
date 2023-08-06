@@ -3,6 +3,7 @@ import "./App.scss";
 
 import Redirect from "./components/Redirect";
 import RootLayout from "./components/RootLayout";
+import Rooms from "./components/pages/Rooms";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/rooms",
-        element: <div></div>,
+        element: <Rooms></Rooms>,
       },
       {
         path: "/users",

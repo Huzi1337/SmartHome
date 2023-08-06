@@ -1,0 +1,75 @@
+@use "../../assets/colors";
+@use "../../assets/fonts";
+@use "../../assets/mixins";
+
+.rooms__container {
+  @include mixins.align-content($direction: column);
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 40px 100px 1fr 1fr;
+  gap: 15px 20px;
+  grid-template-areas:
+    "blank blank options"
+    "select select select"
+    "camera camera media"
+    "thermostat devices media";
+  height: 100vh;
+  padding: 40px 20px 20px;
+}
+
+.rooms__camera,
+.rooms__thermostat,
+.rooms__devices,
+.rooms__media {
+  width: 100%;
+  height: 100%;
+}
+
+.rooms__camera,
+.rooms__thermostat,
+.rooms__media {
+  @include mixins.style-container($padding: 12px 35px);
+}
+
+.rooms__camera {
+  grid-area: camera;
+}
+
+.rooms__thermostat {
+  grid-area: thermostat;
+}
+
+.rooms__devices {
+  display: grid;
+  grid-area: devices;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+}
+
+.rooms__media {
+  grid-area: media;
+}
+
+.rooms__selection {
+  @include mixins.align-content();
+  padding: 5px 0 10px 20px;
+  margin-top: 12px;
+  grid-area: select;
+
+  gap: 20px;
+  width: calc(100% + 20px);
+  height: max-content;
+}
+
+.rooms__selectionButton {
+  @include mixins.style-container($padding: 12px 35px);
+  text-transform: capitalize;
+  min-width: max-content;
+}
+
+.rooms__selectionButton.active {
+  @include mixins.main-Gradient;
+  color: colors.$white;
+}

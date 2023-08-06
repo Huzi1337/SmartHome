@@ -1,0 +1,43 @@
+@use "../assets/mixins";
+@use "../assets/colors";
+
+.device__container {
+  @include mixins.style-container();
+  @include mixins.align-content($main: space-between, $cross: center);
+  padding: 8px 5px;
+
+  .device__item {
+    @include mixins.center-column();
+    width: 50%;
+    height: 100%;
+    h6 {
+      margin-bottom: auto;
+    }
+
+    .device__itemPhoto {
+      margin-bottom: auto;
+      min-height: 130px;
+      min-width: 100%;
+      @include mixins.adjust-background();
+    }
+  }
+  .device__options {
+    @include mixins.center-column();
+    height: 100%;
+    .mantine-Switch-root {
+      margin-bottom: auto;
+    }
+    gap: 6px;
+  }
+}
+
+.device__container.active {
+  @include mixins.main-Gradient();
+  h6 {
+    color: colors.$white;
+  }
+}
+
+.speaker {
+  background-image: url(/photos/lgspeaker.png);
+}

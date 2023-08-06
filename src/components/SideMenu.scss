@@ -61,21 +61,6 @@
 
 .sideMenu__footerRow {
   @include mixins.align-content();
-  .mantine-Switch-thumb {
-    background-color: colors.$lightIndigo;
-    border-color: colors.$lightIndigo;
-  }
-  input:checked + * > .mantine-1nqstp3 {
-    background-color: colors.$white;
-  }
-  .mantine-Switch-track {
-    border-color: colors.$lavender;
-    background-color: colors.$white;
-  }
-  input:checked + .mantine-ejxzu {
-    background-color: colors.$lightIndigo;
-    border-color: colors.$lightIndigo;
-  }
 
   h4 {
     margin-right: 10px;
