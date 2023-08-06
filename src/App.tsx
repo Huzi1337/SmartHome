@@ -11,7 +11,23 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Redirect></Redirect> },
       {
+        path: "/home",
+        element: <div></div>,
+      },
+      {
         path: "/rooms",
+        element: <div></div>,
+      },
+      {
+        path: "/users",
+        element: <div></div>,
+      },
+      {
+        path: "/devices",
+        element: <div></div>,
+      },
+      {
+        path: "/security",
         element: <div></div>,
       },
     ],

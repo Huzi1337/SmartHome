@@ -1,10 +1,86 @@
 @use "../assets/colors";
 @use "../assets/fonts";
 @use "../assets/mixins";
+@forward "./SideMenuIcons";
 
 .sideMenu__container {
-  width: 15%;
+  width: fit-content;
+  padding: 20px 0 80px;
   height: 100vh;
   @include mixins.main-Gradient();
   @include mixins.align-content($direction: column, $cross: center);
+}
+
+.sideMenu__headerContainer {
+  @include mixins.center-column();
+  margin-bottom: 20px;
+  h1 {
+    margin-bottom: 15px;
+  }
+  img {
+    border-radius: 45px;
+  }
+  h4 {
+    margin-top: 10px;
+    font-weight: 400;
+  }
+}
+
+.sideMenu__navigation {
+  @include mixins.align-content($direction: column, $cross: center);
+}
+
+.sideMenu__navLink {
+  @include mixins.align-content();
+  width: 100%;
+  gap: 10px;
+  text-decoration: none;
+  padding: 18px 60px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.sideMenu__navLink.active {
+  background-color: colors.$white;
+  h3 {
+    color: colors.$lightIndigo;
+  }
+}
+
+.sideMenu__navigation__icon {
+  @include mixins.adjust-background();
+  width: 24px;
+  height: 24px;
+}
+
+.sideMenu__footer {
+  @include mixins.center-column();
+  gap: 30px;
+  margin-top: auto;
+}
+
+.sideMenu__footerRow {
+  @include mixins.align-content();
+  .mantine-Switch-thumb {
+    background-color: colors.$lightIndigo;
+    border-color: colors.$lightIndigo;
+  }
+  input:checked + * > .mantine-1nqstp3 {
+    background-color: colors.$white;
+  }
+  .mantine-Switch-track {
+    border-color: colors.$lavender;
+    background-color: colors.$white;
+  }
+  input:checked + .mantine-ejxzu {
+    background-color: colors.$lightIndigo;
+    border-color: colors.$lightIndigo;
+  }
+
+  h4 {
+    margin-right: 10px;
+  }
+  h3 {
+    margin-left: 5px;
+  }
 }

@@ -1,0 +1,43 @@
+.sideMenu__navigation__icon.home {
+  background-image: url(/icons/sidebar/home.svg);
+}
+
+.sideMenu__navigation__icon.rooms {
+  background-image: url(/icons/sidebar/rooms.svg);
+}
+
+.sideMenu__navigation__icon.users {
+  background-image: url(/icons/sidebar/users.svg);
+}
+
+.sideMenu__navigation__icon.devices {
+  background-image: url(/icons/sidebar/devices.svg);
+}
+
+.sideMenu__navigation__icon.security {
+  background-image: url(/icons/sidebar/security.svg);
+}
+
+.sideMenu__navigation__icon.logout {
+  background-image: url(/icons/sidebar/logout.svg);
+}
+
+.sideMenu__navigation__icon.home.active {
+  background-image: url(/icons/sidebar/homeActive.svg);
+}
+
+.sideMenu__navigation__icon.rooms.active {
+  background-image: url(/icons/sidebar/roomsActive.svg);
+}
+
+.sideMenu__navigation__icon.users.active {
+  background-image: url(/icons/sidebar/usersActive.svg);
+}
+
+.sideMenu__navigation__icon.devices.active {
+  background-image: url(/icons/sidebar/devicesActive.svg);
+}
+
+.sideMenu__navigation__icon.security.active {
+  background-image: url(/icons/sidebar/securityActive.svg);
+}
