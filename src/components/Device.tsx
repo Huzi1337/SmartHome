@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Switch } from "@mantine/core";
-import RoundIcon from "./RoundIcon";
+import IconButton from "./IconButton";
 import "./Device.scss";
 
 type Props = {
@@ -23,12 +23,14 @@ const Device = ({ title, img }: Props) => {
       </div>
       <div className="device__options">
         <Switch checked={isOn} onChange={setIsOnHandler}></Switch>
-        <RoundIcon
+        <IconButton
+          variant="device"
           icon={`/icons/${isOn ? "wifiActive" : "wifi"}.svg`}
-        ></RoundIcon>
-        <RoundIcon
+        ></IconButton>
+        <IconButton
+          variant="device"
           icon={`/icons/${isOn ? "cableActive" : "cable"}.svg`}
-        ></RoundIcon>
+        ></IconButton>
       </div>
     </div>
   );

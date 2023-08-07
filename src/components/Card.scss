@@ -1,0 +1,8 @@
+@use "../assets/mixins";
+
+.card {
+  @include mixins.style-container();
+
+  width: 100%;
+  height: 100%;
+}
