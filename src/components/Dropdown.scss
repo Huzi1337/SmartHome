@@ -1,0 +1,23 @@
+@use "../assets/colors";
+@use "../assets/fonts";
+.mantine-Select-input {
+  background-color: colors.$lavender;
+  padding: 3px;
+  border: 0;
+  font-size: fonts.$h3;
+  font-weight: 600;
+  height: 1.5rem;
+  min-height: 0.5rem;
+}
+
+.mantine-Select-wrapper {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  width: 65px;
+}
+
+.mantine-Select-rightSection {
+  padding-top: 2px;
+  width: auto;
+}

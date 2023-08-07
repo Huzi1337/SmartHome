@@ -10,6 +10,7 @@ import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
 import { transformLabel } from "../../utils/transformLabel";
 import Thermostat from "../Thermostat";
+import Dropdown from "../Dropdown";
 
 const Rooms = () => {
   const { rooms } = useSelector((state: RootState) => state);
@@ -43,9 +44,12 @@ const Rooms = () => {
       <Card className="rooms__camera">
         <div
           className="camera"
-          style={{ backgroundImage: rooms[currentRoom].cameras[0].img }}
+          style={{
+            backgroundImage: `url(${rooms[currentRoom].cameras[0].img}/1.png)`,
+          }}
         >
-          <div>
+          <Dropdown data={["FHD", "HD"]}></Dropdown>
+          <div className="camera__label">
             <h3>{rooms[currentRoom].cameras[0].name}</h3>
           </div>
         </div>
