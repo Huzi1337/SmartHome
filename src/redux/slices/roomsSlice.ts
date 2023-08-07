@@ -3,12 +3,14 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 const INITIAL_STATE: RoomInitialState = {
   bedroom1: {
     devices: {
-      speaker: { isOn: true },
-      humidifier: { isOn: false },
-      roomba: { isOn: false },
-      alexa: { isOn: false },
+      speaker: { isOn: true, img: "speaker" },
+      humidifier: { isOn: false, img: "humidifier" },
+      roomba: { isOn: false, img: "roomba" },
+      alexa: { isOn: false, img: "alexa" },
     },
-    cameras: [{ id: 0, name: "Bedroom 1 cam 1" }],
+    cameras: [
+      { id: 0, name: "Bedroom 1 cam 1", img: "/photos/cameras/bedroom1" },
+    ],
     light: {
       hue: 100,
       lamps: {
@@ -28,12 +30,14 @@ const INITIAL_STATE: RoomInitialState = {
   },
   bedroom2: {
     devices: {
-      speaker: { isOn: true },
-      humidifier: { isOn: false },
-      roomba: { isOn: false },
-      alexa: { isOn: false },
+      speaker: { isOn: true, img: "speaker" },
+      humidifier: { isOn: false, img: "humidifier" },
+      roomba: { isOn: false, img: "roomba" },
+      alexa: { isOn: false, img: "alexa" },
     },
-    cameras: [{ id: 0, name: "Bedroom 2 cam 1" }],
+    cameras: [
+      { id: 0, name: "Bedroom 2 cam 1", img: "/photos/cameras/bedroom2" },
+    ],
     light: {
       hue: 100,
       lamps: {
@@ -53,12 +57,12 @@ const INITIAL_STATE: RoomInitialState = {
   },
   kitchen: {
     devices: {
-      speaker: { isOn: true },
-      humidifier: { isOn: false },
-      roomba: { isOn: false },
-      alexa: { isOn: false },
+      speaker: { isOn: true, img: "speaker" },
+      humidifier: { isOn: false, img: "humidifier" },
+      roomba: { isOn: false, img: "roomba" },
+      alexa: { isOn: false, img: "alexa" },
     },
-    cameras: [{ id: 0, name: "Kitchen cam 1" }],
+    cameras: [{ id: 0, name: "Kitchen cam 1", img: "/photos/cameras/kitchen" }],
     light: {
       hue: 100,
       lamps: {
@@ -78,12 +82,14 @@ const INITIAL_STATE: RoomInitialState = {
   },
   livingRoom: {
     devices: {
-      speaker: { isOn: true },
-      humidifier: { isOn: false },
-      roomba: { isOn: false },
-      alexa: { isOn: false },
+      speaker: { isOn: true, img: "speaker" },
+      humidifier: { isOn: false, img: "humidifier" },
+      roomba: { isOn: false, img: "roomba" },
+      alexa: { isOn: false, img: "alexa" },
     },
-    cameras: [{ id: 0, name: "Living Room cam 1" }],
+    cameras: [
+      { id: 0, name: "Living Room cam 1", img: "/photos/cameras/livingRoom" },
+    ],
     light: {
       hue: 100,
       lamps: {
@@ -103,12 +109,12 @@ const INITIAL_STATE: RoomInitialState = {
   },
   terrace: {
     devices: {
-      speaker: { isOn: true },
-      humidifier: { isOn: false },
-      roomba: { isOn: false },
-      alexa: { isOn: false },
+      speaker: { isOn: true, img: "speaker" },
+      humidifier: { isOn: false, img: "humidifier" },
+      roomba: { isOn: false, img: "roomba" },
+      alexa: { isOn: false, img: "alexa" },
     },
-    cameras: [{ id: 0, name: "Terrace cam 1" }],
+    cameras: [{ id: 0, name: "Terrace cam 1", img: "/photos/cameras/terrace" }],
     light: {
       hue: 100,
       lamps: {

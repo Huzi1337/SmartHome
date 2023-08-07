@@ -4,20 +4,17 @@ import "react-indiana-drag-scroll/dist/style.css";
 import PageHeader from "../PageHeader";
 import { useState } from "react";
 import Device from "../Device";
-import IconButton from "../IconButton";
-import { Switch } from "@mantine/core";
-import Card from "../Card";
 
-const ROOMS = ["bedroom 1", "bedroom 2", "kitchen", "living room", "terrace"];
-const THERMOSTAT_OPTIONS = ["cold", "eco", "hot", "fan"];
+import Card from "../Card";
+import { RootState } from "../../redux/store";
+import { useSelector } from "react-redux";
+import { transformLabel } from "../../utils/transformLabel";
+import Thermostat from "../Thermostat";
 
 const Rooms = () => {
-  const [currentRoom, setCurrentRoom] = useState("living room");
-  const [thermostatOption, setThermostatOption] = useState("cold");
+  const { rooms } = useSelector((state: RootState) => state);
 
-  const setThermostatOptionHandler = (option: string) => {
-    setThermostatOption(option);
-  };
+  const [currentRoom, setCurrentRoom] = useState("livingRoom");
 
   const setCurrentRoomHandler = (room: string) => {
     setCurrentRoom(room);
@@ -30,7 +27,7 @@ const Rooms = () => {
         settingsOnclick={() => {}}
       ></PageHeader>
       <ScrollContainer className="rooms__selection">
-        {ROOMS.map((room) => {
+        {Object.keys(rooms).map((room) => {
           const isActive = currentRoom === room ? "active" : "";
           return (
             <button
@@ -38,39 +35,26 @@ const Rooms = () => {
               onClick={() => setCurrentRoomHandler(room)}
               className={`rooms__selectionButton ${isActive}`}
             >
-              {room}
+              {transformLabel(room)}
             </button>
           );
         })}
       </ScrollContainer>
-      <Card className="rooms__camera"></Card>
-      <Card className="rooms__thermostat">
-        <div className="rooms__thermostatHeader">
-          <h4>Thermostat</h4>
-          <Switch></Switch>
-        </div>
-        <div className="rooms__thermostatOptions">
-          {THERMOSTAT_OPTIONS.map((option) => {
-            const isActive = option === thermostatOption;
-            return (
-              <IconButton
-                variant={isActive ? "thermostat Active" : "thermostat"}
-                icon={`/icons/thermostat/${option}${
-                  isActive ? "Active" : ""
-                }.svg`}
-                onClick={() => setThermostatOptionHandler(option)}
-                text={option}
-                key={option}
-              ></IconButton>
-            );
-          })}
+      <Card className="rooms__camera">
+        <div
+          className="camera"
+          style={{ backgroundImage: rooms[currentRoom].cameras[0].img }}
+        >
+          <div>
+            <h3>{rooms[currentRoom].cameras[0].name}</h3>
+          </div>
         </div>
       </Card>
+      <Thermostat room={currentRoom}></Thermostat>
       <Card className="rooms__devices">
-        <Device title="Speaker" img="speaker"></Device>
-        <Device title="Speaker" img="speaker"></Device>
-        <Device title="Speaker" img="speaker"></Device>
-        <Device title="Speaker" img="speaker"></Device>
+        {Object.keys(rooms[currentRoom].devices).map((device) => (
+          <Device name={device} room={currentRoom}></Device>
+        ))}
       </Card>
       <Card className="rooms__media"></Card>
     </div>

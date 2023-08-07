@@ -2,27 +2,34 @@ import { useState } from "react";
 import { Switch } from "@mantine/core";
 import IconButton from "./IconButton";
 import "./Device.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { deviceSwitch } from "../redux/slices/roomsSlice";
+import { RootState } from "../redux/store";
 
 type Props = {
-  title: string;
-  img: string;
+  name: string;
+
+  room: string;
 };
 
-const Device = ({ title, img }: Props) => {
-  const [isOn, setIsOn] = useState(false);
+const Device = ({ name, room }: Props) => {
+  const dispatch = useDispatch();
+  const { isOn, img } = useSelector(
+    (state: RootState) => state.rooms[room].devices[name]
+  );
 
-  const setIsOnHandler = () => {
-    setIsOn((prev) => !prev);
+  const isOnHandler = () => {
+    dispatch(deviceSwitch({ room, device: name }));
   };
 
   return (
     <div className={`device__container ${isOn ? "active" : ""}`}>
       <div className="device__item">
-        <h6>{title}</h6>
+        <h6>{name}</h6>
         <div className={`device__itemPhoto ${img}`}></div>
       </div>
       <div className="device__options">
-        <Switch checked={isOn} onChange={setIsOnHandler}></Switch>
+        <Switch checked={isOn} onChange={isOnHandler}></Switch>
         <IconButton
           variant="device"
           icon={`/icons/${isOn ? "wifiActive" : "wifi"}.svg`}

@@ -12,6 +12,7 @@
     height: 100%;
     h6 {
       margin-bottom: auto;
+      text-transform: capitalize;
     }
 
     .device__itemPhoto {
@@ -40,4 +41,23 @@
 
 .speaker {
   background-image: url(/photos/lgspeaker.png);
+}
+
+.humidifier {
+  background-image: url(/photos/humidifier.png);
+}
+
+.device__container {
+  .device__item {
+    .device__itemPhoto.roomba {
+      min-height: 80px;
+    }
+  }
+}
+.roomba {
+  background-image: url(/photos/roomba.png);
+}
+
+.alexa {
+  background-image: url(/photos/alexa.png);
 }

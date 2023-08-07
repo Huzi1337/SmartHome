@@ -4,6 +4,7 @@ interface IRoom {
   devices: {
     [key: string]: {
       isOn: boolean;
+      img: string;
     };
   };
   thermostat: {
@@ -14,6 +15,7 @@ interface IRoom {
   cameras: {
     id: number;
     name: string;
+    img: string;
   }[];
   light: {
     hue: number;

@@ -1,0 +1,28 @@
+@use "../assets/mixins";
+@use "../assets/colors";
+
+.card.rooms__thermostat {
+  grid-area: thermostat;
+  @include mixins.align-content(
+    $direction: column,
+    $main: space-between,
+    $cross: center
+  );
+  padding: 12px 35px;
+
+  h1 {
+    color: colors.$text;
+    font-size: 54px;
+  }
+  .rooms__thermostatHeader {
+    width: 100%;
+    @include mixins.align-content($main: space-between, $cross: flex-start);
+    h4 {
+      color: colors.$text;
+    }
+  }
+  .rooms__thermostatOptions {
+    @include mixins.center-row();
+    gap: 10px;
+  }
+}

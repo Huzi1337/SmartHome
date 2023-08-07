@@ -25,26 +25,7 @@
 
 .rooms__camera {
   grid-area: camera;
-}
-
-.card.rooms__thermostat {
-  grid-area: thermostat;
-  @include mixins.align-content(
-    $direction: column,
-    $main: space-between,
-    $cross: center
-  );
-  padding: 12px 35px;
-  .rooms__thermostatHeader {
-    width: 100%;
-    @include mixins.align-content($main: space-between, $cross: flex-start);
-    h4 {
-      color: colors.$text;
-    }
-  }
-  .rooms__thermostatOptions {
-    @include mixins.center-row();
-    gap: 10px;
+  .camera {
   }
 }
 

@@ -3,6 +3,7 @@ import "./Card.scss";
 type Props = {
   children: React.ReactNode;
   className?: string;
+  style?: string;
 };
 
 const Card = ({ children, className = "" }: Props) => {
