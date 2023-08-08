@@ -4,6 +4,7 @@ import "./App.scss";
 import Redirect from "./components/Redirect";
 import RootLayout from "./components/RootLayout";
 import Rooms from "./components/pages/Rooms";
+import Home from "./components/pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Redirect></Redirect> },
       {
         path: "/home",
-        element: <div></div>,
+        element: <Home></Home>,
       },
       {
         path: "/rooms",

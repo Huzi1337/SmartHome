@@ -1,0 +1,41 @@
+@use "../../../assets/colors";
+@use "../../../assets/mixins";
+
+.card.home__statList {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 30px 1px 1fr;
+  grid-template-areas:
+    "title subtitle"
+    "divider divider"
+    "statList statList";
+
+  h3 {
+    grid-area: title;
+    color: colors.$text;
+  }
+  hr {
+    grid-area: divider;
+  }
+}
+
+.home__statListItem {
+  @include mixins.align-content($cross: center);
+  width: 100%;
+  padding-left: 10px;
+  h5 {
+    margin-left: auto;
+  }
+}
+
+.home__statListContent {
+  grid-area: statList;
+  @include mixins.align-content(
+    $direction: column,
+    $main: space-around,
+    $cross: flex-start
+  );
+  h4 {
+    color: colors.$text;
+  }
+}

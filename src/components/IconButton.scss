@@ -25,6 +25,15 @@ $iconSize: 24px;
   }
 }
 
+.iconButton__container.statList {
+  @include mixins.center-column();
+  margin-right: 8px;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 45px;
+}
+
 .iconButton__container.thermostat {
   @include mixins.center-column();
   gap: 3px;

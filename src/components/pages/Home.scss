@@ -1,0 +1,59 @@
+@use "../../assets/colors";
+@use "../../assets/fonts";
+@use "../../assets/mixins";
+
+.home__container {
+  flex: 1;
+  height: 100vh;
+
+  padding: 40px 20px 20px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 60px 1fr 1fr;
+  grid-template-areas:
+    "options options"
+    "col1 col2"
+    "col1 col2";
+  gap: 20px;
+}
+
+.home__col1 {
+  display: grid;
+  grid-area: col1;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 85px 1fr;
+  grid-template-areas:
+    "weather bills"
+    "appStats homeStats"
+    "powerGraph powerGraph";
+
+  gap: 20px;
+  .weather {
+    color: colors.$green;
+  }
+
+  .bills {
+    text-decoration: underline;
+  }
+  .weather.icon,
+  .bills {
+    margin-left: auto;
+  }
+  .bills.expand {
+    align-self: center;
+  }
+}
+
+.home__col2 {
+  @include mixins.center-column();
+  grid-area: col2;
+  gap: 20px;
+}
+
+.home__header {
+  margin-right: auto;
+  h3 {
+    margin-top: 5px;
+    color: colors.$text;
+  }
+}

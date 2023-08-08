@@ -3,7 +3,7 @@
 $iconSize: 32px;
 
 .pageHeader__container {
-  @include mixins.align-content($main: flex-end);
+  @include mixins.align-content($main: flex-end, $cross: center);
   gap: 20px;
   width: 100%;
   height: fit-content;

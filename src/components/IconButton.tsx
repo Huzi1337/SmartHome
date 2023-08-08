@@ -3,7 +3,13 @@ import "./IconButton.scss";
 type Props = {
   icon: string;
   text?: string | null;
-  variant: "device" | "thermostat" | "thermostat Active" | "lamp" | "";
+  variant:
+    | "device"
+    | "thermostat"
+    | "thermostat Active"
+    | "statList"
+    | "lamp"
+    | "";
   textPos?: "down" | "up";
   onClick?: () => void;
 };

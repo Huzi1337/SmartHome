@@ -1,0 +1,21 @@
+@use "../../../assets/mixins";
+
+.card.statRow__container {
+  @include mixins.align-content($main: space-between, $cross: center);
+  padding: 10px 16px;
+  .statRow__entry {
+    @include mixins.align-content(
+      $direction: column,
+      $main: space-between,
+      $cross: center
+    );
+    h5 {
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+    h2 {
+      font-weight: 400;
+    }
+    gap: 10px;
+  }
+}
