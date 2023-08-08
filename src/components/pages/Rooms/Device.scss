@@ -1,5 +1,5 @@
-@use "../assets/mixins";
-@use "../assets/colors";
+@use "../../../assets/mixins";
+@use "../../../assets/colors";
 
 .device__container {
   @include mixins.style-container();

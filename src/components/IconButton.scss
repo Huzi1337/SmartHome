@@ -5,10 +5,14 @@ $iconSize: 24px;
 
 .iconButton__container {
   background-color: colors.$lavender;
+  border-radius: 10px;
 
   padding: 0 4px;
 
   border: 0;
+  h6 {
+    text-transform: capitalize;
+  }
 }
 
 .iconButton__container.device {
@@ -23,15 +27,11 @@ $iconSize: 24px;
 
 .iconButton__container.thermostat {
   @include mixins.center-column();
-  border-radius: 10px;
   gap: 3px;
   padding: 10px 18px 6px;
   img {
     width: 24px;
     height: 24px;
-  }
-  h6 {
-    text-transform: capitalize;
   }
 }
 
@@ -39,6 +39,14 @@ $iconSize: 24px;
   @include mixins.main-Gradient();
   h6 {
     color: colors.$white;
+  }
+}
+
+.iconButton__container.lamp {
+  width: 60px;
+  height: 60px;
+  img {
+    margin-top: 7px;
   }
 }
 

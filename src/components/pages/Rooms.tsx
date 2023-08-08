@@ -3,17 +3,18 @@ import "./Rooms.scss";
 import "react-indiana-drag-scroll/dist/style.css";
 import PageHeader from "../PageHeader";
 import { useState } from "react";
-import Device from "../Device";
+import Device from "./Rooms/Device";
 
 import Card from "../Card";
 import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
 import { transformLabel } from "../../utils/transformLabel";
-import Thermostat from "../Thermostat";
-import Camera from "../Camera";
+import Thermostat from "./Rooms/Thermostat";
+import Camera from "./Rooms/Camera";
+import Media from "./Rooms/Media";
 
 const Rooms = () => {
-  const { rooms } = useSelector((state: RootState) => state);
+  const rooms = useSelector((state: RootState) => state.rooms);
 
   const [currentRoom, setCurrentRoom] = useState("livingRoom");
 
@@ -45,10 +46,10 @@ const Rooms = () => {
       <Thermostat room={currentRoom}></Thermostat>
       <Card className="rooms__devices">
         {Object.keys(rooms[currentRoom].devices).map((device) => (
-          <Device name={device} room={currentRoom}></Device>
+          <Device key={device} name={device} room={currentRoom}></Device>
         ))}
       </Card>
-      <Card className="rooms__media"></Card>
+      <Media room={currentRoom}></Media>
     </div>
   );
 };

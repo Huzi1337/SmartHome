@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import Card from "./Card";
-import Dropdown from "./Dropdown";
-import { RootState } from "../redux/store";
 
 import "./Camera.scss";
+import { RootState } from "../../../redux/store";
+import Card from "../../Card";
+import Dropdown from "../../Dropdown";
 
 type Props = {
   room: string;

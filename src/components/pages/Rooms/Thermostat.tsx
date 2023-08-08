@@ -1,9 +1,10 @@
 import { Switch } from "@mantine/core";
-import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
-import { setThermostat } from "../redux/slices/roomsSlice";
-import { RootState } from "../redux/store";
-import IconButton from "./IconButton";
+import { RootState } from "../../../redux/store";
+import { setThermostat } from "../../../redux/slices/roomsSlice";
+import Card from "../../Card";
+import IconButton from "../../IconButton";
+
 import "./Thermostat.scss";
 
 type Props = {

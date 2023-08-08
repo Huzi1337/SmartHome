@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { Switch } from "@mantine/core";
-import IconButton from "./IconButton";
-import "./Device.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { deviceSwitch } from "../redux/slices/roomsSlice";
-import { RootState } from "../redux/store";
+import { RootState } from "../../../redux/store";
+import { deviceSwitch } from "../../../redux/slices/roomsSlice";
+import IconButton from "../../IconButton";
+
+import "./Device.scss";
 
 type Props = {
   name: string;

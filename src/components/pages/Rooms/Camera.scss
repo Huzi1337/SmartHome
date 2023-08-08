@@ -1,5 +1,5 @@
-@use "../assets/mixins";
-@use "../assets/colors";
+@use "../../../assets/mixins";
+@use "../../../assets/colors";
 
 .card.rooms__camera {
   grid-area: camera;
@@ -23,6 +23,8 @@
     }
   }
   .camera__live {
+    animation: pulse 1.5s ease-in-out infinite;
+
     @include mixins.center-row();
     position: absolute;
 
@@ -33,7 +35,6 @@
     background-color: colors.$lavender;
     border-radius: 45px;
     .camera__liveIcon {
-      animation: pulse 1.5s ease-in-out infinite;
       width: 9px;
       height: 9px;
       background-color: colors.$red;
@@ -47,12 +48,12 @@
 
 @keyframes pulse {
   0% {
-    opacity: 0.75;
+    opacity: 0.8;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.75;
+    opacity: 0.8;
   }
 }

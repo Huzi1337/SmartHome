@@ -15,7 +15,7 @@ const INITIAL_STATE: RoomInitialState = {
       hue: 100,
       lamps: {
         ceiling: false,
-        corner: false,
+        corners: false,
         shelf: false,
         side: false,
         table: false,
@@ -42,7 +42,7 @@ const INITIAL_STATE: RoomInitialState = {
       hue: 100,
       lamps: {
         ceiling: false,
-        corner: false,
+        corners: false,
         shelf: false,
         side: false,
         table: false,
@@ -67,7 +67,7 @@ const INITIAL_STATE: RoomInitialState = {
       hue: 100,
       lamps: {
         ceiling: false,
-        corner: false,
+        corners: false,
         shelf: false,
         side: false,
         table: false,
@@ -91,10 +91,10 @@ const INITIAL_STATE: RoomInitialState = {
       { id: 0, name: "Living Room cam 1", img: "/photos/cameras/livingRoom" },
     ],
     light: {
-      hue: 100,
+      hue: 220,
       lamps: {
         ceiling: false,
-        corner: false,
+        corners: false,
         shelf: false,
         side: false,
         table: false,
@@ -119,7 +119,7 @@ const INITIAL_STATE: RoomInitialState = {
       hue: 100,
       lamps: {
         ceiling: false,
-        corner: false,
+        corners: false,
         shelf: false,
         side: false,
         table: false,

@@ -21,7 +21,7 @@ interface IRoom {
     hue: number;
     lamps: {
       ceiling: boolean;
-      corner: boolean;
+      corners: boolean;
       side: boolean;
       shelf: boolean;
       wall: boolean;
