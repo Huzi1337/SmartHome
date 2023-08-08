@@ -10,7 +10,7 @@ import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
 import { transformLabel } from "../../utils/transformLabel";
 import Thermostat from "../Thermostat";
-import Dropdown from "../Dropdown";
+import Camera from "../Camera";
 
 const Rooms = () => {
   const { rooms } = useSelector((state: RootState) => state);
@@ -41,19 +41,7 @@ const Rooms = () => {
           );
         })}
       </ScrollContainer>
-      <Card className="rooms__camera">
-        <div
-          className="camera"
-          style={{
-            backgroundImage: `url(${rooms[currentRoom].cameras[0].img}/1.png)`,
-          }}
-        >
-          <Dropdown data={["FHD", "HD"]}></Dropdown>
-          <div className="camera__label">
-            <h3>{rooms[currentRoom].cameras[0].name}</h3>
-          </div>
-        </div>
-      </Card>
+      <Camera room={currentRoom}></Camera>
       <Thermostat room={currentRoom}></Thermostat>
       <Card className="rooms__devices">
         {Object.keys(rooms[currentRoom].devices).map((device) => (
