@@ -11,8 +11,6 @@ import BarChart from "./Home/BarChart";
 import Security from "./Home/Security";
 import ElectricityUsageChart from "./Home/ElectricityUsageChart";
 
-const tempCol2 = ["Electricity", "Activity", "Security"];
-
 const Home = () => {
   return (
     <div className="home__container">

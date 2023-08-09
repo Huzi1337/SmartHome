@@ -5,6 +5,7 @@ import { RootState } from "../../../redux/store";
 import { setHue } from "../../../redux/slices/roomsSlice";
 import IconButton from "../../IconButton";
 import "./Media.scss";
+import MusicPlayer from "./MusicPlayer";
 
 type Props = {
   room: string;
@@ -14,6 +15,7 @@ const Media = ({ room }: Props) => {
   const { hue, lamps } = useSelector(
     (state: RootState) => state.rooms[room].light
   );
+
   const dispatch = useDispatch();
   const setHueHandler = (value: number) => {
     dispatch(setHue({ room, hue: value }));
@@ -43,22 +45,7 @@ const Media = ({ room }: Props) => {
           ></IconButton>
         ))}
       </div>
-      <div className="media__player">
-        <div className="track">
-          <div className="info">
-            <h4>In Da Club</h4>
-            <h6>By 50 Cent</h6>
-          </div>
-          <img src="/photos/50cent.png"></img>
-        </div>
-
-        <Slider min={0} max={180} label={null}></Slider>
-        <div className="controls">
-          <button className="back"></button>
-          <button className="play"></button>
-          <button className="forward"></button>
-        </div>
-      </div>
+      <MusicPlayer></MusicPlayer>
     </Card>
   );
 };
