@@ -15,6 +15,18 @@
     "col1 col2"
     "col1 col2";
   gap: 20px;
+  .mantine-Select-wrapper {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: auto;
+    max-width: 100px;
+  }
+  .mantine-Select-input {
+    height: 1.5rem;
+    font-size: 12px;
+    padding: 8px;
+  }
 }
 
 .home__col1 {
@@ -48,6 +60,36 @@
   @include mixins.center-column();
   grid-area: col2;
   gap: 20px;
+  .card {
+    position: relative;
+    @include mixins.center-column();
+
+    padding: 12px 20px;
+    flex: 1;
+    max-height: 33%;
+  }
+  .card.electricity {
+    .chart {
+      position: relative;
+      max-height: 80%;
+      flex: 1;
+    }
+  }
+  .card.activity {
+    .chart {
+      position: relative;
+      flex: 1;
+    }
+  }
+}
+
+.chart__header {
+  @include mixins.align-content($main: space-between, $cross: center);
+  h3 {
+    color: colors.$text;
+  }
+  margin-bottom: auto;
+  width: 100%;
 }
 
 .home__header {

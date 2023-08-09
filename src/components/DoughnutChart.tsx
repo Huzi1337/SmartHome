@@ -1,7 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 
-const DoughnutChart: React.FC = () => {
+type Props = {
+  className: string;
+};
+
+const DoughnutChart = ({ className }: Props) => {
   const chartRef = useRef<any>(null);
 
   useEffect(() => {
@@ -15,38 +19,50 @@ const DoughnutChart: React.FC = () => {
 
     // Define the chart data
     const data = {
-      labels: ["Label 1", "Label 2", "Label 3"],
+      labels: ["Modem", "Lightings", "TV", "Heater"],
       datasets: [
         {
-          data: [30, 40, 50],
+          data: [22, 28, 30, 20],
           backgroundColor: [
-            "rgba(255, 99, 132, 0.7)",
-            "rgba(54, 162, 235, 0.7)",
-            "rgba(75, 192, 192, 0.7)",
+            "rgba(65, 1, 255, 0.9)",
+            "rgba(109, 63, 243, 1",
+            "rgba(153, 123, 240, 1)",
+            "rgba(42, 16, 120, 1)",
           ],
         },
       ],
     };
 
     // Define chart options
-    const options = {
+    const options: any = {
       responsive: true,
       maintainAspectRatio: false,
+      aspectRatio: 1,
+
       plugins: {
         legend: {
-          display: false, // Hide the legend
+          display: true,
+          position: "right" as const,
+          labels: {
+            color: "#0C0C0C",
+            font: { family: "Inter", size: 16, weight: 500 },
+            fontSize: 20,
+            boxWidth: 16,
+            boxHeight: 16,
+            boxBorderRadius: 16,
+            align: "center" as const,
+          },
         },
-        tooltips: {
-          mode: "index",
-          position: "nearest",
-          intersect: false,
+        tooltip: {
           callbacks: {
+            title: () => "", // Remove title
             label: (context: any) => {
               const labelIndex = context.dataIndex;
               const value = data.datasets[0].data[labelIndex];
               return `${data.labels[labelIndex]}: ${value}%`; // Display label and value with "%" sign
             },
           },
+          displayColors: false, // Hide color indicators
         },
       },
     };
@@ -60,7 +76,7 @@ const DoughnutChart: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className={className}>
       <canvas id="doughnutChart"></canvas>
     </div>
   );

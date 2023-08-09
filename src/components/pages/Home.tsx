@@ -6,6 +6,9 @@ import StatList from "./Home/StatList";
 import StatRow from "./Home/StatRow";
 import { BILLS, STATS, WEATHER } from "../../assets/data";
 import DoughnutChart from "../DoughnutChart";
+import Dropdown from "../Dropdown";
+import BarChart from "../BarChart";
+import Security from "./Home/Security";
 
 const tempCol2 = ["Electricity", "Activity", "Security"];
 
@@ -42,9 +45,22 @@ const Home = () => {
         <StatRow data={STATS.home}></StatRow>
       </div>
       <div className="home__col2">
-        <DoughnutChart></DoughnutChart>
-        <Card></Card>
-        <Card></Card>
+        <Card className="electricity">
+          <div className="chart__header">
+            <h3>Electricity Usage</h3>
+            <Dropdown data={["Today", "This month"]}></Dropdown>
+          </div>
+
+          <DoughnutChart className="chart"></DoughnutChart>
+        </Card>
+        <Card className="activity">
+          <div className="chart__header">
+            <h3>Activity</h3>
+            <Dropdown data={["Today", "This month"]}></Dropdown>
+          </div>
+          <BarChart className="chart"></BarChart>
+        </Card>
+        <Security></Security>
       </div>
     </div>
   );
