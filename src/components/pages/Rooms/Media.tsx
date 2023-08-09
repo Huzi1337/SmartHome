@@ -1,11 +1,10 @@
 import { Slider } from "@mantine/core";
 import Card from "../../Card";
-
-import "./Media.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import { setHue } from "../../../redux/slices/roomsSlice";
 import IconButton from "../../IconButton";
+import "./Media.scss";
 
 type Props = {
   room: string;
@@ -45,9 +44,20 @@ const Media = ({ room }: Props) => {
         ))}
       </div>
       <div className="media__player">
-        <h4>In Da Club</h4>
-        <h6>By 50 Cent</h6>
-        <Slider label={null}></Slider>
+        <div className="track">
+          <div className="info">
+            <h4>In Da Club</h4>
+            <h6>By 50 Cent</h6>
+          </div>
+          <img src="/photos/50cent.png"></img>
+        </div>
+
+        <Slider min={0} max={180} label={null}></Slider>
+        <div className="controls">
+          <button className="back"></button>
+          <button className="play"></button>
+          <button className="forward"></button>
+        </div>
       </div>
     </Card>
   );

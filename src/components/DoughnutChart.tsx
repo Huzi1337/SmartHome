@@ -46,13 +46,6 @@ const DoughnutChart: React.FC = () => {
               const value = data.datasets[0].data[labelIndex];
               return `${data.labels[labelIndex]}: ${value}%`; // Display label and value with "%" sign
             },
-            // Remove color box
-            labelColor: (context: any) => {
-              return {
-                borderColor: "transparent",
-                backgroundColor: "transparent",
-              };
-            },
           },
         },
       },
