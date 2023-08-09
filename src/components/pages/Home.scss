@@ -54,6 +54,17 @@
   .bills.expand {
     align-self: center;
   }
+  .powerConsumption {
+    grid-area: powerGraph;
+    @include mixins.align-content($direction: column, $main: space-between);
+    gap: 25px;
+    .chart {
+      position: relative;
+      margin: auto;
+      height: 90%;
+      width: 80%;
+    }
+  }
 }
 
 .home__col2 {

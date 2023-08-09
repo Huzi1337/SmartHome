@@ -5,10 +5,11 @@ import "./Home.scss";
 import StatList from "./Home/StatList";
 import StatRow from "./Home/StatRow";
 import { BILLS, STATS, WEATHER } from "../../assets/data";
-import DoughnutChart from "../DoughnutChart";
+import DoughnutChart from "./Home/DoughnutChart";
 import Dropdown from "../Dropdown";
-import BarChart from "../BarChart";
+import BarChart from "./Home/BarChart";
 import Security from "./Home/Security";
+import ElectricityUsageChart from "./Home/ElectricityUsageChart";
 
 const tempCol2 = ["Electricity", "Activity", "Security"];
 
@@ -43,6 +44,13 @@ const Home = () => {
 
         <StatRow data={STATS.app}></StatRow>
         <StatRow data={STATS.home}></StatRow>
+        <Card className="powerConsumption">
+          <div className="chart__header">
+            <h3>Power Consumption</h3>
+            <Dropdown data={["Today", "This month"]}></Dropdown>
+          </div>
+          <ElectricityUsageChart className="chart"></ElectricityUsageChart>
+        </Card>
       </div>
       <div className="home__col2">
         <Card className="electricity">
