@@ -1,14 +1,25 @@
 @use "../assets/colors";
 @use "../assets/fonts";
 @use "../assets/mixins";
+@use "../assets/animations";
+
 @forward "./SideMenuIcons";
 
 .sideMenu__container {
+  z-index: 3;
+  position: relative;
   width: fit-content;
   padding: 20px 0 80px;
   height: 100vh;
   @include mixins.main-Gradient();
   @include mixins.align-content($direction: column, $cross: center);
+}
+.sideMenu__blinder {
+  display: none;
+}
+
+.sideMenu__toggle {
+  display: none;
 }
 
 .sideMenu__headerContainer {
@@ -40,6 +51,19 @@
   margin-bottom: 5px;
 }
 
+.sideMenu__navLink:hover {
+  transition: all 0.5s;
+  transform: scale(1.05);
+  @include animations.pulse();
+
+  cursor: pointer;
+}
+
+.sideMenu__navLink.active:hover {
+  transform: scale(1);
+  animation: none;
+}
+
 .sideMenu__navLink.active {
   background-color: colors.$white;
   h3 {
@@ -67,5 +91,56 @@
   }
   h3 {
     margin-left: 5px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sideMenu__container {
+    position: absolute;
+    transform: translateX(-100%);
+    transition: all 0.5s;
+  }
+  .sideMenu__container.show {
+    transform: translateX(0);
+  }
+  .sideMenu__toggle {
+    display: block;
+    @include mixins.adjust-background();
+    position: absolute;
+    border: 0;
+    border-radius: 0 10px 10px 0;
+    width: 20px;
+    height: 40px;
+    top: 50%;
+    right: -19px;
+    background-image: url(/icons/arrowRight.svg);
+    background-color: colors.$lightIndigo;
+  }
+  .sideMenu__toggle:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: all 0.5s;
+    @include animations.pulse($iteration: infinite);
+  }
+  .sideMenu__blinder {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.7;
+    z-index: 2;
+    background-color: colors.$text;
+  }
+  .sideMenu__blinder.show {
+    display: block;
+    @include animations.fadeInSeeThrough();
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
   }
 }

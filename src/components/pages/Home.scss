@@ -1,8 +1,11 @@
 @use "../../assets/colors";
 @use "../../assets/fonts";
 @use "../../assets/mixins";
+@use "../../assets/animations";
 
 .home__container {
+  @include animations.fadeIn();
+
   flex: 1;
   height: 100vh;
 

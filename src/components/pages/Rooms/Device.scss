@@ -4,11 +4,12 @@
 .device__container {
   @include mixins.style-container();
   @include mixins.align-content($main: space-between, $cross: center);
+  position: relative;
   padding: 8px 5px;
 
   .device__item {
     @include mixins.center-column();
-    width: 50%;
+    flex: 1;
     height: 100%;
     h6 {
       margin-bottom: auto;
@@ -16,10 +17,11 @@
     }
 
     .device__itemPhoto {
+      position: absolute;
       margin-bottom: auto;
       min-height: 130px;
       min-width: 100%;
-      @include mixins.adjust-background();
+      @include mixins.adjust-background($size: contain);
     }
   }
   .device__options {

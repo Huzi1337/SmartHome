@@ -2,6 +2,7 @@
 @use "../../../assets/colors";
 
 .card.rooms__media {
+  min-height: 660px;
   @include mixins.align-content(
     $direction: column,
     $main: space-between,

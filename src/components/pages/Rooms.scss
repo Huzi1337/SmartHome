@@ -1,9 +1,11 @@
 @use "../../assets/colors";
 @use "../../assets/fonts";
 @use "../../assets/mixins";
+@use "../../assets/animations";
 
 .rooms__container {
-  @include mixins.align-content($direction: column);
+  @include animations.fadeIn();
+  overflow-y: auto;
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -45,8 +47,41 @@
   text-transform: capitalize;
   min-width: max-content;
 }
+.rooms__selectionButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: all 0.5s;
+  @include animations.pulse($iteration: infinite);
+}
 
 .rooms__selectionButton.active {
   @include mixins.main-Gradient;
   color: colors.$white;
+}
+
+@media (max-width: 1220px) {
+  .rooms__container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 100px 1fr 350px 1fr;
+    grid-template-areas:
+      "blank options"
+      "select select"
+      "camera camera"
+      "thermostat devices"
+      "media media";
+  }
+}
+
+@media (max-width: 550px) {
+  .rooms__container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 100px 1fr 1fr 350px 1fr;
+    grid-template-areas:
+      "blank options"
+      "select select"
+      "camera camera"
+      "thermostat thermostat"
+      "devices devices"
+      "media media";
+  }
 }

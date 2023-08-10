@@ -1,4 +1,5 @@
 @use "../../../assets/mixins";
+@use "../../../assets/animations";
 @use "../../../assets/colors";
 
 .card.rooms__camera {
@@ -23,8 +24,7 @@
     }
   }
   .camera__live {
-    animation: pulse 1.5s ease-in-out infinite;
-
+    @include animations.pulse(1.5s, infinite);
     @include mixins.center-row();
     position: absolute;
 
@@ -46,14 +46,8 @@
   }
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.8;
+@media (max-width: 1220px) {
+  .card.rooms__camera {
+    min-height: 300px;
   }
 }

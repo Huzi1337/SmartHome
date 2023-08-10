@@ -1,0 +1,48 @@
+@mixin animationDetails($duration, $iteration) {
+  animation-duration: $duration;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: $iteration;
+}
+
+@mixin pulse($duration: 1.25s, $iteration: infinite) {
+  animation-name: pulse;
+  @include animationDetails($duration: $duration, $iteration: $iteration);
+}
+
+@mixin fadeIn($duration: 0.5s, $iteration: 1, $finalOpacity: 1) {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: $finalOpacity;
+    }
+  }
+  animation-name: fadeIn;
+  @include animationDetails($duration, $iteration);
+}
+
+@mixin fadeInSeeThrough($duration: 0.5s, $iteration: 1) {
+  @keyframes fadeInSeeThrough {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
+  animation-name: fadeInSeeThrough;
+  @include animationDetails($duration, $iteration);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}

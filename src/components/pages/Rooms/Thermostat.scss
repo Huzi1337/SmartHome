@@ -8,6 +8,7 @@
     $main: space-between,
     $cross: center
   );
+  gap: 40px;
   padding: 12px 35px;
 
   h1 {
@@ -22,7 +23,18 @@
     }
   }
   .rooms__thermostatOptions {
-    @include mixins.center-row();
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 10px;
+  }
+}
+
+@media ((max-width: 750px) and (min-width: 551px)) or (max-width: 320px) {
+  .card.rooms__thermostat {
+    .rooms__thermostatOptions {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
   }
 }
