@@ -1,5 +1,6 @@
 @use "../assets/colors";
 @use "../assets/mixins";
+@use "../assets/animations";
 
 $iconSize: 24px;
 
@@ -12,6 +13,17 @@ $iconSize: 24px;
   border: 0;
   h6 {
     text-transform: capitalize;
+  }
+}
+
+.iconButton__container:hover {
+  transition: all 0.1s;
+  transform: scale(1.05);
+
+  @include animations.pulse();
+  cursor: pointer;
+  h6 {
+    font-weight: bold;
   }
 }
 

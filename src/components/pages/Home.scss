@@ -5,9 +5,10 @@
 
 .home__container {
   @include animations.fadeIn();
-
+  overflow-y: auto;
   flex: 1;
   height: 100vh;
+  min-height: 820px;
 
   padding: 40px 20px 20px;
   display: grid;
@@ -111,5 +112,37 @@
   h3 {
     margin-top: 5px;
     color: colors.$text;
+  }
+}
+
+@media (max-width: 1150px) {
+  .home__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content repeat(4, max-content);
+    grid-template-areas:
+      "options"
+      "col1"
+      "col1"
+      "col2"
+      "col2";
+  }
+}
+
+@media (max-width: 550px) {
+  .home__col1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 85px 85px 1fr;
+    grid-template-areas:
+      "weather"
+      "bills"
+      "appStats"
+      "homeStats"
+      "powerGraph";
+  }
+}
+
+@media (max-width: 370px) {
+  .home__container {
+    padding: 40px 0 20px;
   }
 }

@@ -72,7 +72,6 @@ const MusicPlayer = ({ songs = placeholderSongs }: Props) => {
 
   const prevSongHandler = () => {
     setMusicTime(0);
-
     setCurrentSongId((prev) => (prev > 0 ? prev - 1 : songs.length - 1));
   };
 
