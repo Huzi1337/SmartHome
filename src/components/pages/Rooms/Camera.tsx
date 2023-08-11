@@ -11,12 +11,13 @@ type Props = {
 
 const Camera = ({ room }: Props) => {
   const cameras = useSelector((state: RootState) => state.rooms[room].cameras);
+
   return (
     <Card className="rooms__camera">
       <div
         className="camera"
         style={{
-          backgroundImage: `url(${cameras[0].img}/1.png)`,
+          backgroundImage: `url(${cameras[0].img})`,
         }}
       >
         <Dropdown data={["FHD", "HD"]}></Dropdown>

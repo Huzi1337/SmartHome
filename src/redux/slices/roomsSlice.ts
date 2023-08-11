@@ -9,7 +9,7 @@ const INITIAL_STATE: RoomInitialState = {
       alexa: { isOn: false, img: "alexa" },
     },
     cameras: [
-      { id: 0, name: "Bedroom 1 cam 1", img: "/photos/cameras/bedroom1" },
+      { id: 0, name: "Bedroom 1 cam 1", img: "/photos/cameras/bedroom1/1.png" },
     ],
     light: {
       hue: 100,
@@ -36,7 +36,7 @@ const INITIAL_STATE: RoomInitialState = {
       alexa: { isOn: false, img: "alexa" },
     },
     cameras: [
-      { id: 0, name: "Bedroom 2 cam 1", img: "/photos/cameras/bedroom2" },
+      { id: 0, name: "Bedroom 2 cam 1", img: "/photos/cameras/bedroom2/1.jpg" },
     ],
     light: {
       hue: 100,
@@ -62,7 +62,9 @@ const INITIAL_STATE: RoomInitialState = {
       roomba: { isOn: false, img: "roomba" },
       alexa: { isOn: false, img: "alexa" },
     },
-    cameras: [{ id: 0, name: "Kitchen cam 1", img: "/photos/cameras/kitchen" }],
+    cameras: [
+      { id: 0, name: "Kitchen cam 1", img: "/photos/cameras/kitchen/1.png" },
+    ],
     light: {
       hue: 100,
       lamps: {
@@ -88,7 +90,11 @@ const INITIAL_STATE: RoomInitialState = {
       alexa: { isOn: false, img: "alexa" },
     },
     cameras: [
-      { id: 0, name: "Living Room cam 1", img: "/photos/cameras/livingRoom" },
+      {
+        id: 0,
+        name: "Living Room cam 1",
+        img: "/photos/cameras/livingRoom/1.png",
+      },
     ],
     light: {
       hue: 220,
@@ -114,7 +120,9 @@ const INITIAL_STATE: RoomInitialState = {
       roomba: { isOn: false, img: "roomba" },
       alexa: { isOn: false, img: "alexa" },
     },
-    cameras: [{ id: 0, name: "Terrace cam 1", img: "/photos/cameras/terrace" }],
+    cameras: [
+      { id: 0, name: "Terrace cam 1", img: "/photos/cameras/terrace/1.jpg" },
+    ],
     light: {
       hue: 100,
       lamps: {
