@@ -49,10 +49,10 @@ const SideMenu = () => {
           })}
         </nav>
         <div className="sideMenu__footer">
-          <div className="sideMenu__footerRow">
+          {/* <div className="sideMenu__footerRow">
             <h4>Dark Mode</h4>
             <Switch aria-label="Dark Mode"></Switch>
-          </div>
+          </div> */}
           <div className="sideMenu__footerRow">
             <div className="sideMenu__navigation__icon logout"></div>
             <h3>Signout</h3>
