@@ -18,6 +18,7 @@ const Dropdown = ({ data, placeholder = "" }: Props) => {
       placeholder={placeholder}
       value={selected}
       onChange={(value: string | null) => setSelected(value)}
+      readOnly
     />
   );
 };

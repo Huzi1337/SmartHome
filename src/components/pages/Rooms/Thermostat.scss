@@ -1,5 +1,6 @@
 @use "../../../assets/mixins";
 @use "../../../assets/colors";
+@use "../../../assets/animations";
 
 .card.rooms__thermostat {
   grid-area: thermostat;
@@ -14,6 +15,16 @@
   h1 {
     color: colors.$text;
     font-size: 54px;
+  }
+
+  h1.increasing {
+    color: colors.$green;
+    @include animations.pulse();
+  }
+  h1.decreasing {
+    @include animations.pulse();
+
+    color: colors.$red;
   }
   .rooms__thermostatHeader {
     width: 100%;
