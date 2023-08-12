@@ -9,6 +9,7 @@ type Props = {
     | "thermostat Active"
     | "statList"
     | "lamp"
+    | "lamp active"
     | "";
   textPos?: "down" | "up";
   onClick?: () => void;

@@ -71,6 +71,16 @@ $iconSize: 24px;
   }
 }
 
+.iconButton__container.lamp.active {
+  @include mixins.main-Gradient();
+  h6 {
+    color: colors.$white;
+  }
+  img {
+    filter: brightness(0) invert(1);
+  }
+}
+
 .device__options {
   .iconButton__container:last-child {
     margin-bottom: auto;

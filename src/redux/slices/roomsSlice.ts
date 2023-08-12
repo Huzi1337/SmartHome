@@ -12,15 +12,12 @@ const INITIAL_STATE: RoomInitialState = {
       { id: 0, name: "Bedroom 1 cam 1", img: "/photos/cameras/bedroom1/1.png" },
     ],
     light: {
-      hue: 100,
-      lamps: {
-        ceiling: false,
-        corners: false,
-        shelf: false,
-        side: false,
-        table: false,
-        wall: false,
-      },
+      ceiling: { isOn: false, hue: 100 },
+      corners: { isOn: false, hue: 100 },
+      shelf: { isOn: false, hue: 100 },
+      side: { isOn: false, hue: 100 },
+      table: { isOn: false, hue: 100 },
+      wall: { isOn: false, hue: 100 },
     },
     thermostat: {
       isOn: true,
@@ -39,15 +36,12 @@ const INITIAL_STATE: RoomInitialState = {
       { id: 0, name: "Bedroom 2 cam 1", img: "/photos/cameras/bedroom2/1.jpg" },
     ],
     light: {
-      hue: 100,
-      lamps: {
-        ceiling: false,
-        corners: false,
-        shelf: false,
-        side: false,
-        table: false,
-        wall: false,
-      },
+      ceiling: { isOn: false, hue: 100 },
+      corners: { isOn: false, hue: 100 },
+      shelf: { isOn: false, hue: 100 },
+      side: { isOn: false, hue: 100 },
+      table: { isOn: false, hue: 100 },
+      wall: { isOn: false, hue: 100 },
     },
     thermostat: {
       isOn: true,
@@ -66,15 +60,12 @@ const INITIAL_STATE: RoomInitialState = {
       { id: 0, name: "Kitchen cam 1", img: "/photos/cameras/kitchen/1.png" },
     ],
     light: {
-      hue: 100,
-      lamps: {
-        ceiling: false,
-        corners: false,
-        shelf: false,
-        side: false,
-        table: false,
-        wall: false,
-      },
+      ceiling: { isOn: false, hue: 100 },
+      corners: { isOn: false, hue: 100 },
+      shelf: { isOn: false, hue: 100 },
+      side: { isOn: false, hue: 100 },
+      table: { isOn: false, hue: 100 },
+      wall: { isOn: false, hue: 100 },
     },
     thermostat: {
       isOn: true,
@@ -97,15 +88,12 @@ const INITIAL_STATE: RoomInitialState = {
       },
     ],
     light: {
-      hue: 220,
-      lamps: {
-        ceiling: false,
-        corners: false,
-        shelf: false,
-        side: false,
-        table: false,
-        wall: false,
-      },
+      ceiling: { isOn: false, hue: 100 },
+      corners: { isOn: false, hue: 100 },
+      shelf: { isOn: false, hue: 100 },
+      side: { isOn: false, hue: 100 },
+      table: { isOn: false, hue: 100 },
+      wall: { isOn: false, hue: 100 },
     },
     thermostat: {
       isOn: true,
@@ -124,15 +112,12 @@ const INITIAL_STATE: RoomInitialState = {
       { id: 0, name: "Terrace cam 1", img: "/photos/cameras/terrace/1.jpg" },
     ],
     light: {
-      hue: 100,
-      lamps: {
-        ceiling: false,
-        corners: false,
-        shelf: false,
-        side: false,
-        table: false,
-        wall: false,
-      },
+      ceiling: { isOn: false, hue: 100 },
+      corners: { isOn: false, hue: 100 },
+      shelf: { isOn: false, hue: 100 },
+      side: { isOn: false, hue: 100 },
+      table: { isOn: false, hue: 100 },
+      wall: { isOn: false, hue: 100 },
     },
     thermostat: {
       isOn: true,
@@ -142,15 +127,19 @@ const INITIAL_STATE: RoomInitialState = {
   },
 };
 
+export type Lamps = keyof typeof INITIAL_STATE.bedroom1.light;
+
 interface IDeviceSwitchPayload extends IRoomsPayload {
   device: string;
 }
 
 interface ILampSwitchPayload extends IRoomsPayload {
-  lamp: keyof typeof INITIAL_STATE.bedroom1.light.lamps;
+  lamp: Lamps;
 }
 
 interface ISetHuePayload extends IRoomsPayload {
+  lamp: Lamps;
+
   hue: number;
 }
 
@@ -177,7 +166,7 @@ const roomsSlice = createSlice({
       state,
       { payload: { lamp, room } }: PayloadAction<ILampSwitchPayload>
     ) => {
-      state[room].light.lamps[lamp] = !state[room].light.lamps[lamp];
+      state[room].light[lamp].isOn = !state[room].light[lamp].isOn;
       return state;
     },
     setThermostat: (
@@ -189,9 +178,9 @@ const roomsSlice = createSlice({
     },
     setHue: (
       state,
-      { payload: { room, hue } }: PayloadAction<ISetHuePayload>
+      { payload: { room, hue, lamp } }: PayloadAction<ISetHuePayload>
     ) => {
-      state[room].light.hue = hue;
+      state[room].light[lamp].hue = hue;
       return state;
     },
   },

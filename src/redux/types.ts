@@ -18,15 +18,12 @@ interface IRoom {
     img: string;
   }[];
   light: {
-    hue: number;
-    lamps: {
-      ceiling: boolean;
-      corners: boolean;
-      side: boolean;
-      shelf: boolean;
-      wall: boolean;
-      table: boolean;
-    };
+    ceiling: { isOn: boolean; hue: number };
+    corners: { isOn: boolean; hue: number };
+    side: { isOn: boolean; hue: number };
+    shelf: { isOn: boolean; hue: number };
+    wall: { isOn: boolean; hue: number };
+    table: { isOn: boolean; hue: number };
   };
 }
 
