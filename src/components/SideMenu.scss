@@ -22,6 +22,10 @@
   display: none;
 }
 
+.sideMenu__navLink.inactive:hover {
+  cursor: not-allowed;
+}
+
 .sideMenu__headerContainer {
   @include mixins.center-column();
   margin-bottom: 20px;

@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import "./SideMenu.scss";
 import { NavLink, useLocation } from "react-router-dom";
-import { Switch } from "@mantine/core";
 import { useState } from "react";
 
 const SECTIONS = ["home", "rooms", "users", "devices", "security"];
@@ -33,7 +32,7 @@ const SideMenu = () => {
         <nav className="sideMenu__navigation">
           {SECTIONS.map((section) => {
             const isActive = pathname === `/${section}` ? "active" : "";
-            return (
+            return section === "home" || section === "rooms" ? (
               <NavLink
                 className={`sideMenu__navLink ${isActive}`}
                 key={section}
@@ -45,6 +44,14 @@ const SideMenu = () => {
                 ></div>
                 <h3>{section}</h3>
               </NavLink>
+            ) : (
+              <a className={`sideMenu__navLink inactive`} key={section}>
+                <div
+                  key={section}
+                  className={`sideMenu__navigation__icon ${section} ${isActive}`}
+                ></div>
+                <h3>{section}</h3>
+              </a>
             );
           })}
         </nav>
