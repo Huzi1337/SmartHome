@@ -37,10 +37,10 @@ const BarChartNoTooltipLegend = ({ className }: Props) => {
       maintainAspectRatio: false,
       scales: {
         x: {
-          display: false, // Hide the x-axis
+          display: false,
         },
         y: {
-          display: false, // Hide the y-axis
+          display: false,
         },
       },
       plugins: {
@@ -49,14 +49,14 @@ const BarChartNoTooltipLegend = ({ className }: Props) => {
         },
         tooltip: {
           callbacks: {
-            title: () => "", // Remove title
+            title: () => "",
             label: (context: any) => {
               const labelIndex = context.dataIndex;
               const value = data.datasets[0].data[labelIndex];
-              return `${data.labels[labelIndex]}: ${value} hours`; // Display label and value with "%" sign
+              return `${data.labels[labelIndex]}: ${value} hours`;
             },
           },
-          displayColors: false, // Hide color indicators
+          displayColors: false,
         },
       },
       layout: {

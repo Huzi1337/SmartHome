@@ -7,10 +7,9 @@ type Props = {
 
 const ElectricityUsageChart = ({ className }: Props) => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
-  const chartInstanceRef = useRef<ChartType | null | any>(null); // To keep track of the Chart instance
+  const chartInstanceRef = useRef<ChartType | null | any>(null);
 
-  // Hypothetical data
-  const currentHour = new Date().getHours(); // Get the current hour of the day
+  const currentHour = new Date().getHours();
   const hoursOfDay = Array.from(
     { length: 7 },
     (_, i) => `${(currentHour + i) % 24}:00`
@@ -19,14 +18,12 @@ const ElectricityUsageChart = ({ className }: Props) => {
 
   useEffect(() => {
     if (chartRef.current) {
-      // Destroy the previous chart instance if it exists
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
       }
 
       const ctx = chartRef.current.getContext("2d");
 
-      // Create a new Chart instance
       chartInstanceRef.current = new Chart(ctx as CanvasRenderingContext2D, {
         type: "line",
         data: {

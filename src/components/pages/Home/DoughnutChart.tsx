@@ -9,15 +9,12 @@ const DoughnutChart = ({ className }: Props) => {
   const chartRef = useRef<any>(null);
 
   useEffect(() => {
-    // Get a reference to the canvas element
     const ctx = document.getElementById("doughnutChart") as HTMLCanvasElement;
 
-    // Destroy previous chart instance if it exists
     if (chartRef.current) {
       chartRef.current.destroy();
     }
 
-    // Define the chart data
     const data = {
       labels: ["Modem", "Lightings", "TV", "Heater"],
       datasets: [
@@ -33,7 +30,6 @@ const DoughnutChart = ({ className }: Props) => {
       ],
     };
 
-    // Define chart options
     const options: any = {
       responsive: true,
       maintainAspectRatio: false,
@@ -55,19 +51,18 @@ const DoughnutChart = ({ className }: Props) => {
         },
         tooltip: {
           callbacks: {
-            title: () => "", // Remove title
+            title: () => "",
             label: (context: any) => {
               const labelIndex = context.dataIndex;
               const value = data.datasets[0].data[labelIndex];
-              return `${data.labels[labelIndex]}: ${value}%`; // Display label and value with "%" sign
+              return `${data.labels[labelIndex]}: ${value}%`;
             },
           },
-          displayColors: false, // Hide color indicators
+          displayColors: false,
         },
       },
     };
 
-    // Create a doughnut chart
     chartRef.current = new Chart(ctx, {
       type: "doughnut",
       data: data,
